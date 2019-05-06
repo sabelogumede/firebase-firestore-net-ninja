@@ -1,0 +1,50 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-firestore.js"></script>
+
+  <title>Firebase Firestore - Net Ninja</title>
+
+  <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+
+  <h1>Cloud Cafe</h1>
+
+  <div class="content">
+    <form id="add-cafe-form"></form>
+    <ul id="cafe-list"></ul>
+  </div>
+
+
+
+
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyBektQs2fU08G6Qil4zNZuPO0BGFAb7e5A",
+      authDomain: "ninja-firestore-tuts-9d657.firebaseapp.com",
+      databaseURL: "https://ninja-firestore-tuts-9d657.firebaseio.com",
+      projectId: "ninja-firestore-tuts-9d657",
+      storageBucket: "ninja-firestore-tuts-9d657.appspot.com",
+      messagingSenderId: "308631052829",
+      appId: "1:308631052829:web:c1c003329d71bd1f"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+    //db.settings({ timestampsInSnapshots: true });
+  </script>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
