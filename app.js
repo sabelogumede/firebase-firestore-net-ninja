@@ -30,7 +30,10 @@ function renderCafe(doc) {
 
 
 // getting data from the db
-db.collection('cafes').get().then((snapshot) => {
+// db.collection('cafes').get().then((snapshot) => {
+
+// getting city by category/value "using .where(with three parameters!! )"
+db.collection('cafes').where('city', '==', 'Johannesburg').get().then((snapshot) => {
 	// loop through each document
 	snapshot.docs.forEach(doc => {
 		//parse the data into our render function above
