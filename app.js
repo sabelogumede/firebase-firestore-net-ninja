@@ -28,18 +28,28 @@ function renderCafe(doc) {
 	})
 }
 
+// ------------ Firebase Queries -- == ----- get all --- by category or value with logic ' ===>< '--------Ordering data 'big to samll, alphabetic, ----------------------------------------------------------
 
 // getting data from the db
 // db.collection('cafes').get().then((snapshot) => {
 
 // getting city by category/value "using .where(with three parameters!! )"
-db.collection('cafes').where('city', '==', 'Johannesburg').get().then((snapshot) => {
+//db.collection('cafes').where('city', '==', 'Johannesburg').get().then((snapshot) => {
+
+// Ordering Data - by property name = .orderBy('property name') (in firebase when ordering by alphabetes - capital letters come before small letters )
+//db.collection('cafes').orderBy('city').get().then((snapshot) => {
+
+// using multiple-dot-chain-queries in firebase (NOTE!! this might give you an error - 'create index' click on the error link to create)
+db.collection('cafes').where('city', '==', 'Johannesburg').orderBy('name').get().then((snapshot) => {
 	// loop through each document
 	snapshot.docs.forEach(doc => {
 		//parse the data into our render function above
 		renderCafe(doc);
 	})
 })
+
+
+// --------------------Firebase Queries--------------------------------------------------------------------
 
 // saving data
 form.addEventListener('submit', (e) => {
